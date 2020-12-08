@@ -18,7 +18,7 @@ class G1_USUARIO_MANAGER(BaseUserManager):
             UsuDni,
             password=password,
         )
-        user.is_admin = True
+        user.UsuAdmi = True
         user.save(using=self._db)
         return user
 
@@ -38,6 +38,7 @@ class G1_USUARIO(AbstractBaseUser):
     UsuSue = models.FloatField(verbose_name="Sueldo Usuario:", blank=True, null=True)
     UsuImaNom = models.CharField(verbose_name="Nombre de Imagen Usuario:", max_length=10, blank=True, null=True)
     UsuRolCod = models.ForeignKey(G1_ROL, on_delete=models.CASCADE,blank=True, null=True)
+    UsuAdmi = models.BooleanField(default = False)
 
     objects = G1_USUARIO_MANAGER()
 
@@ -56,4 +57,4 @@ class G1_USUARIO(AbstractBaseUser):
 
     @property
     def is_staff(self):
-        return self.is_staff
+        return self.UsuAdmi
