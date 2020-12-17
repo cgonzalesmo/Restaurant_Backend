@@ -23,6 +23,7 @@ urlpatterns = [
     path('gestionProducto/', include('gestionProductos.urls')),
     path('gestionComprobante/',include('gestionComprobante.urls')),
     path('gestionMesa/', include('gestionMesas.urls')),
+    path('gestionPedido/', include('gestionPedidos.urls')),
     path('admin/', admin.site.urls),
     url(r'^auth', obtain_auth_token)
 ]
