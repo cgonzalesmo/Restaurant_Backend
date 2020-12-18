@@ -4,4 +4,4 @@ from django.db import models
 class G1_MESA(models.Model):
     MesCod = models.AutoField(verbose_name="Codigo de Mesa:", primary_key=True)
     MesCap = models.IntegerField(verbose_name="Capacidad de Mesa:")
-    MesDis = models.CharField(verbose_name="Descripcion de Mesa:", max_length=50)   
+    MesDis = models.BooleanField(verbose_name="Descripcion de Mesa:", default=False)   
